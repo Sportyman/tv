@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Videos</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 0;
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe id="video-1" src="https://dlhd.so/embed/stream-140.php?autoplay=1"></iframe>
+    </div>
+    <div class="video-container">
+        <iframe id="video-2" src="https://dlhd.so/embed/stream-141.php"></iframe>
+    </div>
+    <div class="video-container">
+        <iframe id="video-3" src="https://dlhd.so/embed/stream-142.php"></iframe>
+    </div>
+    <div class="video-container">
+        <iframe id="video-4" src="https://dlhd.so/embed/stream-143.php"></iframe>
+    </div>
+    <div class="video-container">
+        <iframe id="video-5" src="https://dlhd.so/embed/stream-144.php"></iframe>
+    </div>
+    <div class="video-container">
+        <iframe id="video-6" src="https://dlhd.so/embed/stream-145.php"></iframe>
+    </div>
+    <div class="video-container">
+        <iframe id="video-7" src="https://dlhd.so/embed/stream-146.php"></iframe>
+    </div>
+    <div class="video-container">
+        <iframe id="video-8" src="https://dlhd.so/embed/stream-147.php"></iframe>
+    </div>
+    <div class="video-container">
+        <iframe id="video-9" src="https://dlhd.so/embed/stream-148.php"></iframe>
+    </div>
+
+    <script>
+        document.addEventListener('keydown', function(event) {
+            const videoId = `video-${event.key}`;
+            const videoElement = document.getElementById(videoId);
+            if (videoElement) {
+                if (videoElement.requestFullscreen) {
+                    videoElement.requestFullscreen();
+                } else if (videoElement.mozRequestFullScreen) {
+                    videoElement.mozRequestFullScreen();
+                } else if (videoElement.webkitRequestFullscreen) {
+                    videoElement.webkitRequestFullscreen();
+                } else if (videoElement.msRequestFullscreen) {
+                    videoElement.msRequestFullscreen();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
